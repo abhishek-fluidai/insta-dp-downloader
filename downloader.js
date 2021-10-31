@@ -1,23 +1,15 @@
 var nightmare = require("nightmare")();
 const download = require("image-downloader");
 
-download_dp();
-function download_vid(){
-  await nightmare
-  .goto("https://www.instagram.com/akhandsingh_ads")
-  .wait(".be6sR")
-  .evaluate(() => document.querySelector(".be6sR").src)
-  .end();
+checkPrice();
 
-}
-
-async function download_dp() {
+async function checkPrice() {
   const dp = await nightmare
-    .goto("https://www.instagram.com/khandsingh_ads")
+    .goto("https://www.instagram.com/ig_shahidhussain")
     .wait(".be6sR")
     .evaluate(() => document.querySelector(".be6sR").src)
     .end();
-  console.log(dp);
+  //console.log(dp);
 
   const options = {
     url: dp,
