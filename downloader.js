@@ -19,7 +19,8 @@ async function download_dp() {
   async function download_image() {
     try {
       const { filename, image } = await download.image(options);
-      console.log(filename); // => /path/to/dest/image.jpg
+      console.log(`Filename ${filename}`); // => /path/to/dest/image.jpg
+      console.log("Pathname",options.dest);
     } catch (e) {
       console.error(e);
     }
