@@ -1,9 +1,9 @@
 var nightmare = require("nightmare")();
 const download = require("image-downloader");
 
-checkPrice();
+download_dp();
 
-async function checkPrice() {
+async function download_dp() {
   const dp = await nightmare
     .goto("https://www.instagram.com/ig_shahidhussain")
     .wait(".be6sR")
@@ -13,10 +13,10 @@ async function checkPrice() {
 
   const options = {
     url: dp,
-    dest: "/home/abhishek/Desktop/"
+    dest: "/home/cse-bbs/Pictures/"
   };
 
-  async function downloadIMG() {
+  async function download_image() {
     try {
       const { filename, image } = await download.image(options);
       console.log(filename); // => /path/to/dest/image.jpg
@@ -25,5 +25,5 @@ async function checkPrice() {
     }
   }
 
-  downloadIMG();
+  download_image();
 }
